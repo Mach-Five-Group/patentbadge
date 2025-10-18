@@ -1321,9 +1321,6 @@
       margin-bottom: 2rem;
       padding-bottom: 1rem;
       border-bottom: 1px solid var(--line);
-      background: yellow;
-      min-height: 50px;
-      width: 100%;
     }
 
     .breadcrumb ol {
@@ -1721,8 +1718,6 @@
       .faq-toc {
         padding: 1rem;
         margin-bottom: 2rem;
-        display: block !important;
-        visibility: visible !important;
       }
 
       .faq-toc .toc-heading {
