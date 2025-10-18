@@ -78,17 +78,6 @@
       .grid-3{grid-template-columns:1fr}
       .grid-2{grid-template-columns:1fr}
       .stack-xl{grid-template-columns:1fr !important}
-
-      /* Force visibility of breadcrumb and FAQ TOC */
-      .breadcrumb {
-        display: block !important;
-        visibility: visible !important;
-      }
-
-      .faq-toc {
-        display: block !important;
-        visibility: visible !important;
-      }
     }
 
     /* =====================
@@ -137,11 +126,11 @@
     }
     @media (max-width:768px){
       .mobile-menu-toggle{display:block}
-      nav{position:absolute; top:100%; left:0; right:0; background:rgba(247,247,245,.98); border-bottom:1px solid var(--line); padding:1rem; flex-direction:column; align-items:stretch; display:none; box-shadow:0 4px 6px rgba(0,0,0,0.1); z-index:998}
-      nav.active{display:flex}
-      nav a{width:100%; text-align:center; padding:0.75rem; border-bottom:1px solid rgba(0,0,0,0.05)}
-      nav a:last-child{border-bottom:none}
-      nav a.nav-login{margin:0.5rem 0 0 0; border-bottom:none}
+      header nav#mainNav{position:absolute; top:100%; left:0; right:0; background:rgba(247,247,245,.98); border-bottom:1px solid var(--line); padding:1rem; flex-direction:column; align-items:stretch; display:none; box-shadow:0 4px 6px rgba(0,0,0,0.1); z-index:998}
+      header nav#mainNav.active{display:flex}
+      header nav#mainNav a{width:100%; text-align:center; padding:0.75rem; border-bottom:1px solid rgba(0,0,0,0.05)}
+      header nav#mainNav a:last-child{border-bottom:none}
+      header nav#mainNav a.nav-login{margin:0.5rem 0 0 0; border-bottom:none}
     }
 
     /* =====================
@@ -1409,6 +1398,22 @@
     }
 
     /* FAQ Page Sections */
+    .faq-page-title {
+      opacity: 0;
+      animation: fadeInTitle 0.6s ease forwards;
+    }
+
+    @keyframes fadeInTitle {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .faq-section {
       margin-bottom: 4rem;
       padding-bottom: 2rem;
@@ -1436,6 +1441,11 @@
       padding: 1.5rem;
       margin-bottom: 1rem;
       cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .faq-item[open] {
       transition: all 0.3s ease;
     }
 
@@ -1489,24 +1499,29 @@
       transform: rotate(45deg);
     }
 
+    .faq-item .faq-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+    }
+
+    .faq-item[open] .faq-content {
+      grid-template-rows: 1fr;
+      opacity: 1;
+      transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .faq-item .faq-content-inner {
+      overflow: hidden;
+    }
+
     .faq-item p {
       margin-top: 1rem;
       color: var(--steel);
       line-height: 1.7;
       padding-top: 1rem;
       border-top: 1px solid var(--line);
-      animation: fadeInContent 0.3s ease;
-    }
-
-    @keyframes fadeInContent {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .content .faq-section:last-child {
@@ -1720,14 +1735,55 @@
         margin-bottom: 2rem;
       }
 
+      .breadcrumb {
+        padding: 0.5rem 0;
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+      }
+
+      .breadcrumb ol {
+        gap: 0.4rem;
+      }
+
+      .breadcrumb li {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .breadcrumb li::before {
+        margin: 0 0.4rem;
+      }
+
+      .breadcrumb a {
+        padding: 0.25rem 0.5rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .faq-toc {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+      }
+
       .faq-toc .toc-heading {
         font-size: 0.9rem;
         margin-bottom: 0.75rem;
       }
 
+      .faq-toc .toc-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
       .faq-toc .toc-link {
-        padding: 0.6rem 0.85rem;
+        padding: 0.75rem 1rem;
         font-size: 0.9rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .faq-section h2 {
