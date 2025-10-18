@@ -1247,6 +1247,38 @@
       margin-top: 1rem;
     }
 
+    /* FAQ Section */
+    #faqs {
+      padding: 3rem 0;
+      background: rgba(36, 52, 71, 0.06);
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      text-align: center;
+    }
+
+    #faqs .container {
+      padding: 0 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #faqs h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    #faqs p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      color: var(--steel);
+    }
+
+    #faqs p br {
+      display: block;
+    }
+
     /* FAQ Accordion */
     details summary::-webkit-details-marker {
       display: none;
@@ -1256,6 +1288,137 @@
     }
     details summary span {
       transition: transform 0.3s ease;
+    }
+
+    details.soft {
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    details.soft:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    details summary {
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Breadcrumb Navigation */
+    .breadcrumb {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .breadcrumb ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb li {
+      display: flex;
+      align-items: center;
+    }
+
+    .breadcrumb li:not(:last-child)::after {
+      content: "›";
+      margin-left: 0.5rem;
+      color: var(--steel);
+      font-size: 1.1rem;
+    }
+
+    .breadcrumb a {
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .breadcrumb [aria-current="page"] {
+      color: var(--steel);
+      font-weight: 500;
+    }
+
+    /* FAQ Page Sections */
+    .faq-section {
+      margin-bottom: 3rem;
+    }
+
+    .faq-section h2 {
+      font-family: Georgia, serif;
+      font-size: 1.75rem;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .faq-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-size: 1.5rem;
+      color: var(--accent);
+      font-weight: 400;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-item p {
+      margin-top: 1rem;
+      color: var(--steel);
+      line-height: 1.7;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .content .faq-section:last-child {
+      margin-bottom: 0;
     }
 
     @media (max-width: 820px) {
@@ -1402,9 +1565,86 @@
         gap: 0.75rem;
       }
 
+      /* FAQ Section Mobile */
+      #faqs {
+        padding: 2rem 0;
+      }
+
+      #faqs .container {
+        padding: 0 1rem;
+        max-width: 100%;
+      }
+
+      #faqs h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+      }
+
+      #faqs p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+      }
+
+      #faqs p br {
+        display: none;
+      }
+
+      #faqs .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+      }
+
       /* FAQ items */
       details.soft {
-        padding: 0.75rem;
+        padding: 1rem 0.875rem;
+        font-size: 0.95rem;
+      }
+
+      details summary {
+        font-size: 1rem;
+        padding-right: 1.5rem;
+      }
+
+      details p {
+        font-size: 0.9rem;
+        margin-top: 0.75rem;
+      }
+
+      /* Breadcrumb Mobile */
+      .breadcrumb {
+        margin-bottom: 1.5rem;
+      }
+
+      .breadcrumb ol {
+        font-size: 0.85rem;
+      }
+
+      /* FAQ Page Mobile */
+      .faq-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .faq-item {
+        padding: 1rem;
+      }
+
+      .faq-item summary {
+        font-size: 0.95rem;
+        padding-right: 0.5rem;
+      }
+
+      .faq-item summary::after {
+        font-size: 1.25rem;
+      }
+
+      .faq-item p {
+        font-size: 0.9rem;
+        margin-top: 0.75rem;
+        padding-top: 0.75rem;
       }
 
       /* Footer */
@@ -1414,6 +1654,19 @@
 
       footer .container > div {
         justify-content: center;
+      }
+
+      footer .container > div > div {
+        justify-content: center;
+      }
+
+      footer .container > div:first-child > div:first-child {
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      footer .container > div:first-child p {
+        text-align: center;
       }
 
       /* Dashboard screens */
