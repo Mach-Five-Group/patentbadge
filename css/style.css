@@ -19,8 +19,8 @@
        CSS Reset (trimmed)
        ===================== */
     *,*::before,*::after{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6}
+    html{margin:0;padding:0;scroll-behavior:smooth}
+    body{margin:0;padding:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6}
     img{max-width:100%;display:block}
     a{color:inherit}
 
@@ -1350,9 +1350,49 @@
       font-weight: 500;
     }
 
+    /* FAQ Table of Contents */
+    .faq-toc {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .faq-toc .toc-link {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .faq-toc .toc-link:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(201, 75, 75, 0.2);
+    }
+
+    .faq-toc .toc-link:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+
     /* FAQ Page Sections */
     .faq-section {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-section:last-child {
+      border-bottom: none;
     }
 
     .faq-section h2 {
@@ -1362,6 +1402,7 @@
       margin-bottom: 1.5rem;
       padding-bottom: 0.75rem;
       border-bottom: 2px solid var(--accent);
+      scroll-margin-top: 6rem;
     }
 
     .faq-item {
@@ -1371,12 +1412,18 @@
       padding: 1.5rem;
       margin-bottom: 1rem;
       cursor: pointer;
-      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      transition: all 0.3s ease;
     }
 
     .faq-item:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    .faq-item:focus-within {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
     }
 
     .faq-item summary {
@@ -1389,6 +1436,11 @@
       align-items: center;
       user-select: none;
       -webkit-user-select: none;
+      outline: none;
+    }
+
+    .faq-item summary:focus {
+      outline: none;
     }
 
     .faq-item summary::-webkit-details-marker {
@@ -1400,9 +1452,13 @@
       font-size: 1.5rem;
       color: var(--accent);
       font-weight: 400;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, color 0.3s ease;
       flex-shrink: 0;
       margin-left: 1rem;
+    }
+
+    .faq-item:hover summary::after {
+      color: var(--accent-ink);
     }
 
     .faq-item[open] summary::after {
@@ -1415,6 +1471,18 @@
       line-height: 1.7;
       padding-top: 1rem;
       border-top: 1px solid var(--line);
+      animation: fadeInContent 0.3s ease;
+    }
+
+    @keyframes fadeInContent {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .content .faq-section:last-child {
@@ -1623,9 +1691,25 @@
       }
 
       /* FAQ Page Mobile */
+      .faq-toc {
+        padding: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .faq-toc p {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .faq-toc .toc-link {
+        padding: 0.6rem 0.85rem;
+        font-size: 0.9rem;
+      }
+
       .faq-section h2 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
+        scroll-margin-top: 5rem;
       }
 
       .faq-item {
