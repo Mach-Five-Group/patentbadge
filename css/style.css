@@ -222,11 +222,11 @@
     @media (max-width:920px){.cta-row{justify-content:center}}
     @media (max-width:640px){.cta-row{flex-direction:column; width:100%; gap:1rem}
       .cta-row .btn, .cta-row .btn-secondary{width:100%; text-align:center}}
-    .btn{appearance:none; border:2px solid var(--accent); background:var(--accent); color:#fff; padding:.85rem 1.25rem; border-radius:.4rem; font-weight:600; cursor:pointer; font-size:1.05rem; text-decoration:none; display:inline-block; transition:all 0.3s}
+    .btn{appearance:none; border:2px solid var(--accent); background:var(--accent); color:#fff; padding:.85rem 1.25rem; border-radius:.4rem; font-weight:600; cursor:pointer; font-size:1.05rem; text-decoration:none; display:inline-block; transition:all 0.3s; user-select:none; -webkit-user-select:none}
     .btn:hover{background:#fff; color:#D4AF37; border-color:#D4AF37}
     .btn:hover svg{transform:translateX(4px)}
     .btn:focus{outline:3px solid var(--focus)}
-    .btn-secondary{appearance:none; border:2px solid var(--ink); background:#fff; color:var(--ink); padding:.75rem 1.25rem; border-radius:.4rem; font-weight:600; cursor:pointer; font-size:1.05rem; text-decoration:none; display:inline-block; transition:all 0.3s}
+    .btn-secondary{appearance:none; border:2px solid var(--ink); background:#fff; color:var(--ink); padding:.75rem 1.25rem; border-radius:.4rem; font-weight:600; cursor:pointer; font-size:1.05rem; text-decoration:none; display:inline-block; transition:all 0.3s; user-select:none; -webkit-user-select:none}
     .btn-secondary:hover{background:#fff; color:#D4AF37; border-color:#D4AF37}
     .btn-secondary:hover svg{transform:translateX(4px)}
     .btn-secondary:focus{outline:3px solid var(--focus)}
