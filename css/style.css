@@ -78,6 +78,17 @@
       .grid-3{grid-template-columns:1fr}
       .grid-2{grid-template-columns:1fr}
       .stack-xl{grid-template-columns:1fr !important}
+
+      /* Force visibility of breadcrumb and FAQ TOC */
+      .breadcrumb {
+        display: block !important;
+        visibility: visible !important;
+      }
+
+      .faq-toc {
+        display: block !important;
+        visibility: visible !important;
+      }
     }
 
     /* =====================
