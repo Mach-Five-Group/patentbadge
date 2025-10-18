@@ -1,13 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PCX</title><link>https://mach-five-group.github.io/patentbadge/</link><description>Recent content on PCX</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://mach-five-group.github.io/patentbadge/index.xml" rel="self" type="application/rss+xml"/><item><title>Frequently Asked Questions</title><link>https://mach-five-group.github.io/patentbadge/frequently-asked-questions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mach-five-group.github.io/patentbadge/frequently-asked-questions/</guid><description>&lt;nav class="faq-toc" aria-label="Table of Contents"&gt;
- &lt;p class="toc-heading"&gt;Jump to section:&lt;/p&gt;
- &lt;div class="toc-links"&gt;
- &lt;a href="#patent-badge" class="toc-link"&gt;Patent Badge&lt;/a&gt;
- &lt;a href="#pcx" class="toc-link"&gt;PCX&lt;/a&gt;
- &lt;a href="#licensing" class="toc-link"&gt;Licensing&lt;/a&gt;
- &lt;a href="#other" class="toc-link"&gt;Other&lt;/a&gt;
- &lt;/div&gt;
-&lt;/nav&gt;
-&lt;div class="faq-section" aria-labelledby="patent-badge-heading"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PCX</title><link>https://mach-five-group.github.io/patentbadge/</link><description>Recent content on PCX</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://mach-five-group.github.io/patentbadge/index.xml" rel="self" type="application/rss+xml"/><item><title>Frequently Asked Questions</title><link>https://mach-five-group.github.io/patentbadge/frequently-asked-questions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mach-five-group.github.io/patentbadge/frequently-asked-questions/</guid><description>&lt;div class="faq-section" aria-labelledby="patent-badge-heading"&gt;
  &lt;h2 id="patent-badge"&gt;Patent Badge&lt;/h2&gt;
  &lt;details class="faq-item" open aria-expanded="true"&gt;
  &lt;summary aria-label="Question 1 about Patent Badge"&gt;Question 1&lt;/summary&gt;
@@ -45,4 +36,8 @@
  &lt;/details&gt;
  &lt;details class="faq-item" aria-expanded="false"&gt;
  &lt;summary aria-label="Question 2 about Licensing"&gt;Question 2&lt;/summary&gt;
- &lt;p&gt;Answer 2&lt;/p&gt;</description></item></channel></rss>
+ &lt;p&gt;Answer 2&lt;/p&gt;
+ &lt;/details&gt;
+ &lt;details class="faq-item" aria-expanded="false"&gt;
+ &lt;summary aria-label="Question 3 about Licensing"&gt;Question 3&lt;/summary&gt;
+ &lt;p&gt;Answer 3&lt;/p&gt;</description></item></channel></rss>

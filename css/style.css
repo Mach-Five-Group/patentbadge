@@ -1366,15 +1366,11 @@
 
     /* FAQ Table of Contents */
     .faq-toc {
-      background: lime;
-      border: 3px solid red;
+      background: white;
+      border: 1px solid var(--line);
       border-radius: 8px;
       padding: 1.5rem;
       margin-bottom: 3rem;
-      display: block;
-      visibility: visible;
-      min-height: 100px;
-      width: 100%;
     }
 
     .faq-toc .toc-heading {
